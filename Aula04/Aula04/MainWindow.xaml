@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Aula04"
         mc:Ignorable="d"
                 Title="Lista de figuras" Height="228" Width="335">
-    <Grid>
-        <Menu  Margin="0,0,0,153">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
             <MenuItem Header="Figuras">
                 <MenuItem x:Name="FigurasAdicionar" Header="Adicionar" Click="FigurasAdicionar_Click"/>
                 <MenuItem x:Name="FigurasRemover" Header="Remover" Click="FigurasRemover_Click"/>
@@ -18,16 +18,18 @@
                 <MenuItem x:Name="QuadroLimpar" Header="Limpar" Click="QuadroLimpar_Click"/>
             </MenuItem>
         </Menu>
-        <TextBlock HorizontalAlignment="Left" Margin="17,59,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbFiguras" Margin="10,80,232,17" SelectionChanged="lbFiguras_SelectionChanged">
-            <ListBox.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Adicionar" Click="FigurasAdicionar_Click" />
-                    <MenuItem Header="Remover" Click="FigurasRemover_Click" />
-                </ContextMenu>
-            </ListBox.ContextMenu>
-        </ListBox>
-        <TextBlock HorizontalAlignment="Left" Margin="183,62,0,0" TextWrapping="Wrap" Text="Representação" VerticalAlignment="Top"/>
-        <Canvas x:Name="canvasRepresentacao" Margin="132,83,19,17" Background="LightGray"/>
-    </Grid>
+        <Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="17,19,0,0" TextWrapping="Wrap" Text="Descrição" VerticalAlignment="Top"/>
+            <ListBox x:Name="lbFiguras" Margin="10,40,0,17" Width="100" HorizontalAlignment="Left" SelectionChanged="lbFiguras_SelectionChanged">
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Adicionar" Click="FigurasAdicionar_Click" />
+                        <MenuItem Header="Remover" Click="FigurasRemover_Click" />
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+            <TextBlock HorizontalAlignment="Left" Margin="183,22,0,0" TextWrapping="Wrap" Text="Representação" VerticalAlignment="Top"/>
+            <Canvas x:Name="canvasRepresentacao" Margin="132,43,19,17" Background="LightGray"/>
+        </Grid>
+    </DockPanel>
 </Window>
