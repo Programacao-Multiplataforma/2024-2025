@@ -100,7 +100,7 @@ namespace Aula04
 
         private void FigurasRemover_Click(object sender, RoutedEventArgs e)
         {
-            if (lbFiguras.SelectedItems.Count > 0)
+            if (lbFiguras.SelectedItems.Count > 0) // if (lbFiguras.SelectedIndex != -1) // alternativo
             {
                 if (MessageBox.Show("Tem a certeza?", "Apagar Figura", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
                 {
