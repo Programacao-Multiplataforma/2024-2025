@@ -9,7 +9,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Figuras">
-                <MenuItem Header="Adicionar" Click="FigurasAdicionar_Click" />
+                <MenuItem Header="Adicionar" Click="FigurasAdicionar_Click" InputGestureText="CTRL + A" />
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
@@ -30,6 +30,11 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="mnRemover" Header="Remover" Click="mnRemover_Click" />
+                    </ContextMenu>
+                </ListBox.ContextMenu>
             </ListBox>
         </Grid>
     </DockPanel>

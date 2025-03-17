@@ -36,8 +36,14 @@ namespace Aula05
         private void lbFiguras_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int figuraselecionada = lbFiguras.SelectedIndex;
-            Figura fig = Lista[figuraselecionada];
-            sbiDimensoes.Content = "Largura: " + fig.Largura + " Altura: " + fig.Altura;
+            if (figuraselecionada != -1)
+            {
+                Figura fig = Lista[figuraselecionada];
+                sbiDimensoes.Content = "Largura: " + fig.Largura + " Altura: " + fig.Altura;
+            }
+            else{
+                sbiDimensoes.Content = "Largura: ? Altura: ?";
+            }
         }
 
         private void AtualizaFiguras()
@@ -49,6 +55,17 @@ namespace Aula05
                 lbFiguras.Items.Add(item);
             }
         }
+
+        private void mnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            int figuraselecionada = lbFiguras.SelectedIndex;
+            if (figuraselecionada != -1)
+            {
+                Lista.RemoveAt(figuraselecionada);
+                AtualizaFiguras();
+            }
+        }
+
         //TPC: Desenhar figura selecionada com as respetivas dimensões e validar
         //a largura e altura inseridas pelo utilizador
     }
